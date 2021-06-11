@@ -27,6 +27,10 @@ steps:
 - id: 'Deploy application to cluster'
   name: 'gcr.io/k8s-skaffold/skaffold:v0.20.0'
   entrypoint: 'bash'
+  env:
+    - 'REGION=northamerica-northeast1'
+    - '_CLUSTER=online-boutique-terraform'
+    - 'PROJECT_ID=Arctiq'
   args: 
   - '-c'
   - > 
