@@ -35,7 +35,7 @@ steps:
   args: 
   - '-c'
   - > 
-    gcloud container clusters get-credentials --zone=$ZONE $_CLUSTER;
+    gcloud container clusters get-credentials --region=$_REGION $_CLUSTER;
     skaffold run -f=skaffold.yaml --default-repo=gcr.io/$PROJECT_ID;
 
 # Add more power, and more time, for heavy Skaffold build
