@@ -31,10 +31,11 @@ steps:
     - 'REGION=northamerica-northeast1'
     - '_CLUSTER=online-boutique-terraform'
     - 'PROJECT_ID=Arctiq'
+    - 'ZONE=northamerica-northeast1-a'
   args: 
   - '-c'
   - > 
-    gcloud container clusters get-credentials --region=$REGION $_CLUSTER;
+    gcloud container clusters get-credentials --zone=$ZONE $_CLUSTER;
     skaffold run -f=skaffold.yaml --default-repo=gcr.io/$PROJECT_ID;
 
 # Add more power, and more time, for heavy Skaffold build
